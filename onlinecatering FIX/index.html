@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@400;500;600;700;800&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="assets/logo_transparent.png" type="image/png">
+    <title>GlowPalate — Beauty & Brain Functional Catering</title>
+</head>
+<body>
+
+    <!-- ===== NAVBAR ===== -->
+    <nav class="navbar" id="mainNav">
+        <div class="nav-container">
+            <!-- Logo -->
+            <a href="#" class="nav-logo">
+                <img src="assets/logo_transparent.png" alt="GlowPalate Logo" class="logo-img">
+                <span class="logo-text">GlowPalate</span>
+            </a>
+            <!-- Desktop links -->
+            <ul class="nav-links">
+                <li><a href="#features">Kenapa Kami</a></li>
+                <li><a href="#value-props">Program</a></li>
+                <li><a href="#service-area">Area Layanan</a></li>
+                <li><a href="#loyalty">The Glow Club</a></li>
+                <li><a href="#daftar" class="nav-cta">Daftar Sekarang</a></li>
+            </ul>
+            <!-- Hamburger (mobile only) -->
+            <button class="hamburger" id="hamburgerBtn" aria-label="Buka menu navigasi" aria-expanded="false" aria-controls="mobileMenu">
+                <span class="hamburger-bar"></span>
+                <span class="hamburger-bar"></span>
+                <span class="hamburger-bar"></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ===== OFFCANVAS MOBILE MENU ===== -->
+    <div class="offcanvas-overlay" id="offcanvasOverlay"></div>
+    <div class="offcanvas-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Menu navigasi">
+        <div class="offcanvas-header">
+            <a href="#" class="nav-logo offcanvas-logo">
+                <img src="assets/logo_transparent.png" alt="GlowPalate Logo" class="logo-img logo-img--dark">
+                <span class="logo-text logo-text--dark">GlowPalate</span>
+            </a>
+            <button class="offcanvas-close" id="offcanvasClose" aria-label="Tutup menu">✕</button>
+        </div>
+        <nav class="offcanvas-nav">
+            <ul class="offcanvas-links">
+                <li><a href="#features" class="offcanvas-link">Kenapa Kami</a></li>
+                <li><a href="#value-props" class="offcanvas-link">Program</a></li>
+                <li><a href="#service-area" class="offcanvas-link">Area Layanan</a></li>
+                <li><a href="#loyalty" class="offcanvas-link">The Glow Club</a></li>
+            </ul>
+            <div class="offcanvas-divider"></div>
+            <a href="#daftar" class="btn-primary offcanvas-cta">Daftar Sekarang</a>
+        </nav>
+    </div>
+
+    <!-- ===== HERO SECTION ===== -->
+    <section class="hero" id="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-container">
+
+            <!-- Left: Copy -->
+            <div class="hero-copy">
+                <p class="hero-eyebrow">Premium Wellness Catering · Jakarta &amp; Tangerang</p>
+                <h1 class="hero-title">
+                    Eat for Your Glow.<br>
+                    <em>Fuel Your Ambition.</em>
+                </h1>
+                <p class="hero-subtitle">
+                    Nutrisi fungsional untuk profesional modern — glow dari dalam, performa optimal, setiap hari.
+                </p>
+                <div class="hero-actions">
+                    <a href="#daftar" class="btn-hero-primary">Mulai Glow Journey</a>
+                    <div class="hero-badges">
+                        <span class="badge">Skin Radiance</span>
+                        <span class="badge">Brain Focus</span>
+                        <span class="badge">Bebas Ongkir</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right: Registration Form -->
+            <div class="hero-form-card" id="daftar">
+                <p class="form-eyebrow">Bergabung dengan GlowPalate</p>
+                <h2 class="form-title">Mulai Sekarang</h2>
+                <div class="promo-banner">
+                    <span class="promo-banner__title">✨ Pre-Launch Exclusive</span>
+                    <span class="promo-banner__sub">Daftar sekarang &amp; hemat hingga Rp100.000</span>
+                </div>
+                <form class="signup-form" id="glowForm" onsubmit="handleSubmit(event)">
+                    <div class="form-group">
+                        <input type="text" id="nama" name="nama" placeholder="Nama lengkap" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="instagram" name="instagram" placeholder="@instagram" required>
+                    </div>
+                    <div class="form-group form-group--checkbox">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="privacyCheck" name="privacyCheck">
+                            <span class="checkbox-custom"></span>
+                            <span class="checkbox-text">Saya telah membaca dan menyetujui <button class="privacy-link" type="button" onclick="openPrivacy()">Kebijakan Privasi</button>.</span>
+                        </label>
+                        <p class="checkbox-error" id="privacyError">Harap setujui Kebijakan Privasi sebelum melanjutkan.</p>
+                    </div>
+                    <button type="submit" class="btn-primary form-btn" id="submitBtn">Daftar Sekarang — Dapatkan Diskon s/d Rp100.000</button>
+                </form>
+                <p class="form-privacy-note">
+                    Dengan mendaftar, kamu menyetujui Kebijakan Privasi kami.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ===== VALUE PROPOSITIONS ===== -->
+    <section class="value-props" id="value-props">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-label">Designed for Your Lifestyle</span>
+                <h2 class="section-title">Eat for Your Glow.<br><em>Fuel for Your Ambition.</em></h2>
+                <p class="section-desc">GlowPalate bukan sekadar katering diet. Kami hadir untuk menjembatani makanan sehat yang sering membosankan dengan gaya hidup modern yang menuntut performa tinggi dan estetika.</p>
+            </div>
+
+            <div class="vp-grid">
+                <div class="vp-card vp-card--accent">
+                    <span class="vp-number">01</span>
+                    <div class="vp-icon">💫</div>
+                    <h3>Smart Nutrition</h3>
+                    <ul>
+                        <li>🌸 Menikmati makanan yang secara aktif menutrisi kecantikan dari dalam.</li>
+                        <li>🏃 Cocok untuk mendukung gaya hidup aktif dan sehat bagi profesional modern.</li>
+                        <li>⏱️ Menghemat waktu meal prep tanpa berkompromi terhadap kualitas nutrisi harian.</li>
+                    </ul>
+                </div>
+                <div class="vp-card">
+                    <span class="vp-number">02</span>
+                    <div class="vp-icon">🌟</div>
+                    <h3>Professional Palate</h3>
+                    <ul>
+                        <li>🔋 Energi yang stabil sepanjang hari berkat menu rendah glikemik yang mencegah energy crash.</li>
+                        <li>💪 Mendukung pemulihan otot pasca olahraga dengan kandungan protein dan nutrisi mikro yang tepat.</li>
+                        <li>🧘 Mengurangi stres dan kecemasan melalui bahan-bahan adaptogen alami dalam menu harian.</li>
+                    </ul>
+                </div>
+                <div class="vp-card">
+                    <span class="vp-number">03</span>
+                    <div class="vp-icon">⚖️</div>
+                    <h3>Healthy Weight</h3>
+                    <ul>
+                        <li>🥗 Menu kalori terkontrol yang tetap lezat, mengenyangkan, dan kaya nutrisi esensial.</li>
+                        <li>📊 Progres yang terukur melalui Glow-Up Progress Tracker (berat badan, kondisi kulit, energi).</li>
+                        <li>🔄 Fleksibilitas penyesuaian menu mingguan sesuai perkembangan tubuh dan target personal.</li>
+                    </ul>
+                </div>
+                <div class="vp-card vp-card--accent">
+                    <span class="vp-number">04</span>
+                    <div class="vp-icon">💅</div>
+                    <h3>Everyday Glow Up</h3>
+                    <ul>
+                        <li>📸 Sajian yang aesthetically pleasing dan instagrammable — sehat sekaligus layak tampil di feed.</li>
+                        <li>💎 Meningkatkan rasa percaya diri melalui perubahan nyata pada kondisi kulit, rambut, dan postur tubuh.</li>
+                        <li>🌿 Menjadi bagian dari komunitas wellness lifestyle eksklusif di Jakarta Selatan yang saling menginspirasi.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== USP STRIP ===== -->
+    <section class="usp-strip">
+        <div class="usp-container">
+            <div class="usp-item">
+                <span class="usp-icon">🌸</span>
+                <div>
+                    <strong>Beauty & Brain Tailored Nutrition</strong>
+                    <p>Kolagen, antioksidan, omega-3 & adaptogen dalam setiap suapan</p>
+                </div>
+            </div>
+            <div class="usp-divider"></div>
+            <div class="usp-item">
+                <span class="usp-icon">🚀</span>
+                <div>
+                    <strong>Zero-Hassle Premium Delivery</strong>
+                    <p>Terjadwal, tepat waktu, tiba segar di depan meja kantormu</p>
+                </div>
+            </div>
+            <div class="usp-divider"></div>
+            <div class="usp-item">
+                <span class="usp-icon">✨</span>
+                <div>
+                    <strong>Hyper-Personalized Menu</strong>
+                    <p>Dikurasi sesuai tujuan: Glow, Energy Boost, atau Weight Loss</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PRICING TABLE ===== -->
+    <section class="loyalty" id="loyalty">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-label">The Glow Club</span>
+                <h2 class="section-title">Tiered Membership</h2>
+                <p class="section-desc">Semakin lama kamu bersama GlowPalate, semakin besar keuntunganmu.</p>
+            </div>
+
+            <div class="pricing-grid">
+
+                <!-- SILVER -->
+                <div class="pricing-card pricing-card--dark">
+                    <div class="pricing-tier">🥈 Silver</div>
+                    <h3 class="pricing-plan">Pelanggan Mingguan</h3>
+                    <div class="pricing-price-block">
+                        <p class="pricing-price">Rp 300.000</p>
+                        <p class="pricing-meals">5 meals / minggu</p>
+                    </div>
+                    <ul class="pricing-benefits">
+                        <li>Akses menu standar</li>
+                        <li>Complimentary delivery setiap pemesanan</li>
+                    </ul>
+                    <a href="#daftar" class="pricing-btn pricing-btn--outline">Mulai Sekarang</a>
+                </div>
+
+                <!-- GOLD -->
+                <div class="pricing-card pricing-card--gold">
+                    <div class="pricing-popular-badge">MOST POPULAR</div>
+                    <div class="pricing-tier">🥇 Gold</div>
+                    <h3 class="pricing-plan">Pelanggan Bulanan</h3>
+                    <div class="pricing-price-block">
+                        <p class="pricing-discount-label">Potongan Rp 100.000</p>
+                        <p class="pricing-price">
+                            <span class="pricing-price-strike">Rp 1.180.000</span>
+                            Rp 1.080.000
+                        </p>
+                        <p class="pricing-meals">20 meals / bulan</p>
+                    </div>
+                    <ul class="pricing-benefits">
+                        <li>Semua benefit Silver</li>
+                        <li>Diskon ekstra untuk auto-renewal</li>
+                        <li>Termasuk custom healthy snacks / smoothies</li>
+                        <li>Glow-Up Progress Tracker</li>
+                        <li class="pricing-community">
+                            ✨ Exclusive Glow Club Community
+                            <ul class="pricing-sub-list">
+                                <li>Monthly members-only wellness events</li>
+                                <li>Yoga sessions, expert webinars &amp; community gatherings</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <a href="#daftar" class="pricing-btn pricing-btn--solid">Pilih Gold</a>
+                </div>
+
+                <!-- PLATINUM -->
+                <div class="pricing-card pricing-card--dark">
+                    <div class="pricing-tier">💎 Platinum</div>
+                    <h3 class="pricing-plan">Pelanggan 3 Bulan+</h3>
+                    <div class="pricing-price-block">
+                        <p class="pricing-discount-label">Potongan Rp 100.000</p>
+                        <p class="pricing-price">
+                            <span class="pricing-price-strike">Rp 3.340.000</span>
+                            Rp 3.240.000
+                        </p>
+                        <p class="pricing-meals">60 meals / 3 bulan</p>
+                        <p class="pricing-chef-note"><em>Includes 1 Complimentary Chef's Special Meal</em></p>
+                    </div>
+                    <ul class="pricing-benefits">
+                        <li>Semua benefit Gold</li>
+                        <li>Undangan acara komunitas eksklusif</li>
+                        <li>Prioritas utama slot pengantaran harian</li>
+                        <li>Merchandise eksklusif GlowPalate</li>
+                    </ul>
+                    <a href="#daftar" class="pricing-btn pricing-btn--outline">Pilih Platinum</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SERVICE AREA ===== -->
+    <section class="service-area" id="service-area">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-label">Area Layanan</span>
+                <h2 class="section-title">Melayani<br><em>Jakarta &amp; Tangerang</em></h2>
+                <p class="section-desc">Pengiriman healthy catering premium ke wilayah Jakarta dan Tangerang dengan kualitas terbaik, tepat waktu, dan siap mendukung gaya hidup sehat Anda.</p>
+            </div>
+
+            <div class="area-grid area-grid--two">
+                <div class="area-card">
+                    <div class="area-card__img-wrap">
+                        <picture>
+                            <source srcset="assets/jakarta.webp" type="image/webp">
+                            <img src="assets/jakarta.jpg" alt="Jakarta" class="area-card__img" loading="lazy">
+                        </picture>
+                        <div class="area-card__overlay"></div>
+                    </div>
+                    <div class="area-card__body">
+                        <span class="area-number">01</span>
+                        <h3>Jakarta</h3>
+                        <p>Pusat aktivitas bisnis, kawasan premium, dan gaya hidup urban modern.</p>
+                    </div>
+                </div>
+                <div class="area-card">
+                    <div class="area-card__img-wrap">
+                        <picture>
+                            <source srcset="assets/tangerang.webp" type="image/webp">
+                            <img src="assets/tangerang.jpeg" alt="Tangerang" class="area-card__img" loading="lazy">
+                        </picture>
+                        <div class="area-card__overlay"></div>
+                    </div>
+                    <div class="area-card__body">
+                        <span class="area-number">02</span>
+                        <h3>Tangerang</h3>
+                        <p>Kota dinamis yang memadukan kawasan bisnis, hunian premium, dan gaya hidup modern.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== REFERRAL ===== -->
+    <section class="referral">
+        <div class="referral-container">
+
+            <!-- Col Left: Content -->
+            <div class="referral-content">
+                <span class="referral-badge">REFERRAL PROGRAM</span>
+                <h2 class="referral-heading">"Share the Glow" 🌟</h2>
+                <p class="referral-desc">Ajak rekan kerjamu atau sesama gym-goers untuk berlangganan paket bulanan GlowPalate — <strong>kedua belah pihak</strong> akan mendapatkan:</p>
+                <div class="referral-rewards">
+                    <div class="referral-reward">
+                        <span class="reward-icon">🪙</span>
+                        <span>Potongan harga <strong>Rp100.000</strong></span>
+                    </div>
+                    <span class="reward-or"><em>atau</em></span>
+                    <div class="referral-reward">
+                        <span class="reward-icon">🍱</span>
+                        <span>Complimentary meals selama <strong>2 hari</strong></span>
+                    </div>
+                </div>
+                <a href="#daftar" class="referral-cta-btn">Daftar &amp; Mulai Share</a>
+            </div>
+
+            <!-- Col Right: Visual -->
+            <div class="referral-visual">
+                <div class="referral-img-wrap">
+                    <!-- Chat bubble overlay -->
+                    <div class="referral-chat-bubble">
+                        <p>"Eh, coba GlowPalate deh — enak banget &amp; bikin glowing! 🌿"</p>
+                    </div>
+                    <img src="assets/referral-section.jpeg" alt="Referral Program GlowPalate" class="referral-img">
+                </div>
+                <div class="referral-bonus-pill">
+                    <span>Keduanya dapat reward! 🎉</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ===== TRACKER / TRACKER SECTION ===== -->
+    <section class="tracker">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-label">Personalisasi</span>
+                <h2 class="section-title">Glow-Up Progress<br><em>Tracker</em></h2>
+                <p class="section-desc">Setiap pelanggan paket bulanan mendapatkan akses ke digital dashboard untuk memantau perjalanan transformasimu.</p>
+            </div>
+            <div class="tracker-features">
+                <div class="tracker-item">
+                    <span class="tracker-icon">⚖️</span>
+                    <h4>Berat Badan</h4>
+                    <p>Pantau progres berat badan minggu per minggu</p>
+                </div>
+                <div class="tracker-item">
+                    <span class="tracker-icon">⚡</span>
+                    <h4>Tingkat Energi</h4>
+                    <p>Evaluasi level energi harianmu secara mandiri</p>
+                </div>
+                <div class="tracker-item">
+                    <span class="tracker-icon">✨</span>
+                    <h4>Kondisi Kulit</h4>
+                    <p>Self-assessment mingguan untuk skin radiance</p>
+                </div>
+                <div class="tracker-item">
+                    <span class="tracker-icon">🔄</span>
+                    <h4>Menu Adjustment</h4>
+                    <p>Ubah preferensi menu setiap akhir pekan sesuai evaluasi</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PRE-FOOTER BANNER ===== -->
+    <section class="cta-bottom">
+        <div class="cta-container">
+            <h2 class="cta-heading">Siap Memulai Glow Journey-mu?</h2>
+            <p class="cta-sub">Bergabunglah dengan komunitas wellness profesional eksklusif Jakarta dan Tangerang, mulai transformasimu hari ini.</p>
+            <a href="#daftar" class="cta-btn-main">Klaim Slot Konsultasimu</a>
+            <p class="cta-micro">Konsultasi Nutrisi Terjadwal · Tanpa komitmen · Cancel kapan saja</p>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Col 1: Brand -->
+            <div class="footer-brand">
+                <img src="assets/logo_transparent.png" alt="GlowPalate" class="footer-logo">
+                <p class="footer-tagline"><em>"Eat for Your Glow. Fuel for Your Ambition."</em></p>
+                <p class="footer-copy">The Premier Beauty &amp; Brain Functional Catering in Jakarta &amp; Tangerang. Nutrisi fungsional untuk profesional modern yang ingin glow dari dalam.</p>
+                <p class="footer-rights">© 2026 GlowPalate. All rights reserved.</p>
+            </div>
+            <!-- Col 2: Program -->
+            <div class="footer-col">
+                <h4>PROGRAM</h4>
+                <ul>
+                    <li><a href="#value-props">Designed for Your Lifestyle</a></li>
+                    <li><a href="#loyalty">The Glow Club</a></li>
+                    <li><a href="#tracker">Progress Tracker</a></li>
+                </ul>
+            </div>
+            <!-- Col 3: Area Layanan -->
+            <div class="footer-col">
+                <h4>AREA LAYANAN</h4>
+                <ul>
+                    <li>Sudirman &amp; SCBD</li>
+                    <li>Kuningan &amp; Menteng</li>
+                    <li>Senopati &amp; Pondok Indah</li>
+                    <li>BSD City</li>
+                    <li>Alam Sutera</li>
+                    <li>Gading Serpong</li>
+                </ul>
+            </div>
+            <!-- Col 4: Hubungi Kami -->
+            <div class="footer-col">
+                <h4>HUBUNGI KAMI</h4>
+                <ul>
+                    <li>
+                        <a href="https://instagram.com/glowpalate.id" target="_blank" class="footer-social-link">
+                            <svg class="footer-social-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5" stroke="currentColor" stroke-width="2"/>
+                                <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2"/>
+                                <circle cx="17.5" cy="6.5" r="1" fill="currentColor"/>
+                            </svg>
+                            @glowpalate.id
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>🌿 Glow From Within. Perform at Your Peak. 🌿</p>
+        </div>
+    </footer>
+
+    <!-- ===== THANK YOU MODAL ===== -->
+    <div class="modal-overlay" id="thankYouModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+        <div class="modal-card">
+            <div class="modal-icon">🌿</div>
+            <h2 id="modalTitle">Terima Kasih!</h2>
+            <p>Kamu sudah terdaftar sebagai bagian dari komunitas <strong>GlowPalate</strong>.</p>
+            <p class="modal-note">Kami akan menghubungimu via Instagram segera. <em>Stay tuned!</em></p>
+            <button class="btn-primary" onclick="closeModal()">Tutup</button>
+        </div>
+    </div>
+
+    <!-- ===== PRIVACY POLICY MODAL ===== -->
+    <div class="modal-overlay" id="privacyModal" role="dialog" aria-modal="true" aria-labelledby="privacyTitle">
+        <div class="modal-card modal-card--privacy">
+            <div class="modal-card__header">
+                <h2 id="privacyTitle">Kebijakan Privasi GlowPalate</h2>
+                <button class="modal-close" onclick="closePrivacy()" aria-label="Tutup">✕</button>
+            </div>
+            <div class="privacy-content">
+                <p>Kebijakan Privasi ini dibuat untuk melindungi informasi pribadi yang dikumpulkan selama Anda mengunjungi dan menggunakan website <strong>GlowPalate</strong> di <strong>https://glowpalate.my.id</strong>.</p>
+                <p>GlowPalate menghargai privasi setiap pengguna dan berkomitmen untuk menjaga keamanan, kerahasiaan, serta penggunaan Data Pribadi sesuai dengan kebijakan yang berlaku. Dengan mengakses atau menggunakan website GlowPalate, Anda dianggap telah membaca, memahami, dan menyetujui seluruh ketentuan dalam Kebijakan Privasi ini.</p>
+                <p>GlowPalate berhak memperbarui Kebijakan Privasi ini sewaktu-waktu. Setiap perubahan akan berlaku sejak dipublikasikan di website <strong>https://glowpalate.my.id</strong>.</p>
+
+                <h3>A. Pengumpulan Data Pribadi</h3>
+                <p>GlowPalate mengumpulkan Data Pribadi hanya untuk mendukung proses pendaftaran pre-launch, komunikasi dengan calon pelanggan, serta peningkatan kualitas layanan kami. Kami tidak akan menjual, memperjualbelikan, ataupun membagikan Data Pribadi Anda kepada pihak lain tanpa persetujuan, kecuali apabila diwajibkan oleh hukum.</p>
+                <p>Pada tahap pre-launch, informasi yang kami kumpulkan adalah <strong>Username Instagram</strong>, yang digunakan untuk mengidentifikasi peserta pre-launch, menghubungi Anda terkait program atau peluncuran GlowPalate, serta memberikan informasi pembaruan layanan, promo, atau penawaran khusus.</p>
+                <p>Pemberian username Instagram bersifat sukarela. Namun, apabila Anda memilih untuk tidak memberikannya, Anda mungkin tidak dapat mengikuti program pre-launch GlowPalate.</p>
+
+                <h3>B. Keamanan Data dan Transaksi</h3>
+                <p>GlowPalate berkomitmen menjaga keamanan informasi pribadi Anda. Apabila transaksi pembayaran dilakukan melalui layanan pihak ketiga (payment gateway), proses pembayaran akan menggunakan sistem keamanan yang memenuhi standar industri, termasuk enkripsi melalui teknologi SSL atau teknologi keamanan lain yang setara.</p>
+                <p>Meskipun kami berupaya menjaga keamanan data sebaik mungkin, tidak ada metode transmisi data melalui internet yang dapat dijamin sepenuhnya bebas dari risiko.</p>
+
+                <h3>C. Informasi Promo dan Komunikasi</h3>
+                <p>Dengan memberikan username Instagram kepada GlowPalate, Anda menyetujui bahwa GlowPalate dapat menghubungi Anda melalui Instagram terkait informasi peluncuran, promo dan penawaran khusus, pembaruan layanan atau produk, serta informasi lain yang berkaitan dengan program pre-launch.</p>
+
+                <h3>D. Pertanyaan dan Pengaduan</h3>
+                <p>Apabila Anda memiliki pertanyaan, masukan, atau pengaduan mengenai Kebijakan Privasi maupun penggunaan Data Pribadi, silakan menghubungi tim GlowPalate melalui kontak yang tersedia di website <strong>https://glowpalate.my.id</strong>.</p>
+
+                <h3>E. Perubahan Kebijakan Privasi</h3>
+                <p>GlowPalate dapat melakukan perubahan atau pembaruan terhadap Kebijakan Privasi ini sewaktu-waktu. Versi terbaru akan selalu tersedia di <strong>https://glowpalate.my.id</strong>. Dengan tetap menggunakan website setelah adanya pembaruan, Anda dianggap telah menyetujui Kebijakan Privasi yang telah diperbarui.</p>
+            </div>
+            <button class="btn-primary" onclick="closePrivacy()">Mengerti</button>
+        </div>
+    </div>
+
+    <script>
+        // ── Google Apps Script URL ──────────────────────────────────────────
+        // GANTI dengan Web App URL dari deployment Apps Script kamu
+        const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzy3mJBZHp4jg186WITUkjDbATIqTT9xU21dX2XlFk7VSf7awVr-we3rIM_w7eMTIs/exec';
+
+
+        // ── Navbar scroll ───────────────────────────────────────────────────
+        const navbar = document.querySelector('.navbar');
+        window.addEventListener('scroll', () => {
+            navbar.classList.toggle('scrolled', window.scrollY > 50);
+        });
+
+        // ── Offcanvas mobile menu ───────────────────────────────────────────
+        const hamburgerBtn = document.getElementById('hamburgerBtn');
+        const offcanvasMenu = document.getElementById('mobileMenu');
+        const offcanvasOverlay = document.getElementById('offcanvasOverlay');
+        const offcanvasClose = document.getElementById('offcanvasClose');
+
+        function openMenu() {
+            offcanvasMenu.classList.add('active');
+            offcanvasOverlay.classList.add('active');
+            hamburgerBtn.classList.add('is-open');
+            hamburgerBtn.setAttribute('aria-expanded', 'true');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeMenu() {
+            offcanvasMenu.classList.remove('active');
+            offcanvasOverlay.classList.remove('active');
+            hamburgerBtn.classList.remove('is-open');
+            hamburgerBtn.setAttribute('aria-expanded', 'false');
+            document.body.style.overflow = '';
+        }
+
+        hamburgerBtn.addEventListener('click', openMenu);
+        offcanvasClose.addEventListener('click', closeMenu);
+        offcanvasOverlay.addEventListener('click', closeMenu);
+
+        // Auto-close on nav link click
+        document.querySelectorAll('.offcanvas-link, .offcanvas-cta').forEach(link => {
+            link.addEventListener('click', closeMenu);
+        });
+
+        // Close on Escape
+        document.addEventListener('keydown', e => {
+            if (e.key === 'Escape') closeMenu();
+        });
+
+        // ── Form submit ─────────────────────────────────────────────────────
+        async function handleSubmit(e) {
+            e.preventDefault();
+            const btn = document.getElementById('submitBtn');
+            const nama = document.getElementById('nama').value.trim();
+            const instagram = document.getElementById('instagram').value.trim();
+            const privacyCheck = document.getElementById('privacyCheck');
+            const privacyError = document.getElementById('privacyError');
+
+            if (!privacyCheck.checked) {
+                privacyError.classList.add('visible');
+                privacyCheck.focus();
+                return;
+            }
+            privacyError.classList.remove('visible');
+
+            btn.textContent = 'Mengirim...';
+            btn.disabled = true;
+
+            try {
+                const formData = new FormData();
+                formData.append('nama', nama);
+                formData.append('instagram', instagram);
+                formData.append('timestamp', new Date().toLocaleString('id-ID'));
+
+                await fetch(APPS_SCRIPT_URL, {
+                    method: 'POST',
+                    body: formData,
+                    mode: 'no-cors'
+                });
+            } catch (err) {
+                console.log('Submit error:', err);
+            }
+
+            document.getElementById('glowForm').reset();
+            btn.textContent = 'Daftar Sekarang';
+            btn.disabled = false;
+            openModal();
+        }
+
+        // ── Modal Thank You ─────────────────────────────────────────────────
+        function openModal() {
+            document.getElementById('thankYouModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeModal() {
+            document.getElementById('thankYouModal').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        // ── Privacy Policy Modal ────────────────────────────────────────────
+        function openPrivacy() {
+            document.getElementById('privacyModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        function closePrivacy() {
+            document.getElementById('privacyModal').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        // Klik overlay untuk tutup modal
+        document.querySelectorAll('.modal-overlay').forEach(overlay => {
+            overlay.addEventListener('click', function(e) {
+                if (e.target === this) {
+                    this.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+            });
+        });
+
+        // Tekan Escape untuk tutup modal
+        document.addEventListener('keydown', e => {
+            if (e.key === 'Escape') {
+                document.querySelectorAll('.modal-overlay.active').forEach(m => {
+                    m.classList.remove('active');
+                });
+                document.body.style.overflow = '';
+            }
+        });
+
+        // ── Intersection Observer (fade-in) ─────────────────────────────────
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('visible');
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.vp-card, .area-card, .pricing-card, .tracker-item').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
