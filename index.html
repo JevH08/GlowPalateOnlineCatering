@@ -10,6 +10,24 @@
     
       gtag('config', 'AW-18411018787');
     </script>
+    <!-- Event snippet for Submit lead form (1) conversion page
+    In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+    <script>
+    function gtag_report_conversion(url) {
+      var callback = function () {
+        if (typeof(url) != 'undefined') {
+          window.location = url;
+        }
+      };
+      gtag('event', 'conversion', {
+          'send_to': 'AW-18411018787/ktmQCOHBk_ccEKO0h8tE',
+          'value': 1.0,
+          'currency': 'IDR',
+          'event_callback': callback
+      });
+      return false;
+    }
+    </script>
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -145,7 +163,7 @@
                         </label>
                         <p class="checkbox-error" id="privacyError">Harap setujui Kebijakan Privasi sebelum melanjutkan.</p>
                     </div>
-                    <button type="submit" class="btn-primary form-btn" id="submitBtn">Daftar Sekarang</button>
+                    <button type="submit" class="btn-primary form-btn" id="submitBtn" onclick="gtag_report_conversion();">Daftar Sekarang</button>
                 </form>
                 <p class="form-privacy-note">
                     Dengan mendaftar, kamu menyetujui Kebijakan Privasi kami.
