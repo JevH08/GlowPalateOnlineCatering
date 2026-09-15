@@ -409,6 +409,137 @@ img { display: block; max-width: 100%; }
 }
 .area-card p { font-size: .87rem; color: var(--text-muted); line-height: 1.55; }
 
+/* MENU SECTION */
+.menu-section { background: var(--bw); }
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.6rem;
+}
+
+/* Base card */
+.menu-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity .5s ease, transform .5s ease, box-shadow .3s ease;
+}
+.menu-card.visible { opacity: 1; transform: translateY(0); }
+.menu-card:hover { box-shadow: var(--shadow-md); transform: translateY(-6px); }
+
+/* Featured (center) card */
+.menu-card--featured {
+  border-color: var(--sage-light);
+  box-shadow: 0 8px 32px rgba(62,83,64,.12);
+}
+
+/* Badge */
+.menu-card__badge {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  z-index: 2;
+  font-family: var(--font-body);
+  font-size: .7rem;
+  font-weight: 700;
+  letter-spacing: .06em;
+  padding: .28rem .85rem;
+  border-radius: 100px;
+  backdrop-filter: blur(8px);
+}
+.menu-card__badge--intl  { background: rgba(30,36,32,.72); color: var(--white); }
+.menu-card__badge--local { background: rgba(62,83,64,.82); color: var(--white); }
+.menu-card__badge--veg   { background: rgba(107,143,107,.85); color: var(--white); }
+
+/* Image */
+.menu-card__img-wrap {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.menu-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform .5s ease;
+}
+.menu-card:hover .menu-card__img { transform: scale(1.06); }
+
+/* Body */
+.menu-card__body {
+  padding: 1.4rem 1.5rem 1.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  flex: 1;
+}
+
+.menu-card__title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--charcoal);
+  line-height: 1.3;
+  margin: 0;
+}
+
+/* Ingredients list */
+.menu-card__ingredients {
+  display: flex;
+  flex-direction: column;
+  gap: .42rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.menu-card__ingredients li {
+  font-family: var(--font-body);
+  font-size: .84rem;
+  color: var(--text-body);
+  line-height: 1.45;
+}
+
+/* Tags */
+.menu-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .4rem;
+  margin-top: auto;
+  padding-top: .2rem;
+}
+.menu-tag {
+  background: var(--sage-bg);
+  border: 1px solid var(--sage-light);
+  color: var(--sage-dark);
+  font-family: var(--font-body);
+  font-size: .7rem;
+  font-weight: 600;
+  padding: .22rem .7rem;
+  border-radius: 100px;
+  letter-spacing: .03em;
+}
+.menu-card--featured .menu-tag {
+  background: rgba(62,83,64,.1);
+  border-color: var(--sage);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .menu-grid { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; }
+}
+@media (max-width: 560px) {
+  .menu-grid { max-width: 100%; }
+}
+
 /* LOYALTY / PRICING TABLE */
 .loyalty { background: var(--charcoal-dark); position: relative; overflow: hidden; }
 .loyalty::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 15% 60%, rgba(62,83,64,.25) 0%, transparent 55%), radial-gradient(ellipse at 85% 20%, rgba(62,83,64,.15) 0%, transparent 50%); pointer-events: none; }

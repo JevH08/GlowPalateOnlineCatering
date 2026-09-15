@@ -81,7 +81,7 @@
             <!-- Desktop links -->
             <ul class="nav-links">
                 <li><a href="#value-props">Kenapa Kami</a></li>
-                <li><a href="#value-props">Program</a></li>
+                <li><a href="#menu">Menu</a></li>
                 <li><a href="#service-area">Area Layanan</a></li>
                 <li><a href="#loyalty">The Glow Club</a></li>
                 <li><a href="#daftar" class="nav-cta">Daftar Sekarang</a></li>
@@ -108,7 +108,7 @@
         <nav class="offcanvas-nav">
             <ul class="offcanvas-links">
                 <li><a href="#value-props" class="offcanvas-link">Kenapa Kami</a></li>
-                <li><a href="#value-props" class="offcanvas-link">Program</a></li>
+                <li><a href="#menu" class="offcanvas-link">Menu</a></li>
                 <li><a href="#service-area" class="offcanvas-link">Area Layanan</a></li>
                 <li><a href="#loyalty" class="offcanvas-link">The Glow Club</a></li>
             </ul>
@@ -255,6 +255,105 @@
                     <strong>Hyper-Personalized Menu</strong>
                     <p>Dikurasi sesuai tujuan: Glow, Energy Boost, atau Weight Loss</p>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== MENU SECTION ===== -->
+    <section class="menu-section" id="menu">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-label">Our Menu</span>
+                <h2 class="section-title">Crafted for Your Glow.<br><em>Made to Satisfy.</em></h2>
+                <p class="section-desc">Setiap hidangan dirancang oleh ahli gizi — kaya antioksidan, kolagen, dan nutrisi fungsional yang mendukung kecantikan dari dalam.</p>
+            </div>
+
+            <div class="menu-grid">
+
+                <!-- Card 1: International -->
+                <div class="menu-card">
+                    <div class="menu-card__badge menu-card__badge--intl">🌍 Internasional</div>
+                    <div class="menu-card__img-wrap">
+                        <img
+                            src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=600&auto=format&fit=crop&q=80"
+                            alt="Tuna & Avocado Grains Bowl"
+                            class="menu-card__img"
+                            loading="lazy"
+                        >
+                    </div>
+                    <div class="menu-card__body">
+                        <h3 class="menu-card__title">Tuna &amp; Avocado Grains Bowl</h3>
+                        <ul class="menu-card__ingredients">
+                            <li>🐟 Sashimi-grade tuna</li>
+                            <li>🥑 Fresh avocado</li>
+                            <li>🌾 Mixed ancient grains</li>
+                            <li>🥒 Cucumber &amp; edamame</li>
+                            <li>🌿 Sesame ginger dressing</li>
+                        </ul>
+                        <div class="menu-card__tags">
+                            <span class="menu-tag">High Protein</span>
+                            <span class="menu-tag">Omega-3</span>
+                            <span class="menu-tag">Glow Boost</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2: Local -->
+                <div class="menu-card menu-card--featured">
+                    <div class="menu-card__badge menu-card__badge--local">🇮🇩 Menu Lokal</div>
+                    <div class="menu-card__img-wrap">
+                        <img
+                            src="https://images.unsplash.com/photo-1467003909585-2f8a72700288?w=600&auto=format&fit=crop&q=80"
+                            alt="Nasi Merah Grilled Chicken"
+                            class="menu-card__img"
+                            loading="lazy"
+                        >
+                    </div>
+                    <div class="menu-card__body">
+                        <h3 class="menu-card__title">Nasi Merah &amp; Grilled Chicken</h3>
+                        <ul class="menu-card__ingredients">
+                            <li>🍚 Nasi merah</li>
+                            <li>🍗 Grilled chicken breast</li>
+                            <li>🥚 Rolled omelette</li>
+                            <li>🌽 Corn &amp; brocoli salad</li>
+                            <li>🫙 Grilled mayo dressing</li>
+                        </ul>
+                        <div class="menu-card__tags">
+                            <span class="menu-tag">Low GI</span>
+                            <span class="menu-tag">Lean Protein</span>
+                            <span class="menu-tag">Energy Boost</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3: Vegetarian -->
+                <div class="menu-card">
+                    <div class="menu-card__badge menu-card__badge--veg">🌱 Plant-Based</div>
+                    <div class="menu-card__img-wrap">
+                        <img
+                            src="https://images.unsplash.com/photo-1476124369491-e7addf5db371?w=600&auto=format&fit=crop&q=80"
+                            alt="Mushroom Stir Fry"
+                            class="menu-card__img"
+                            loading="lazy"
+                        >
+                    </div>
+                    <div class="menu-card__body">
+                        <h3 class="menu-card__title">Mushroom Stir Fry</h3>
+                        <ul class="menu-card__ingredients">
+                            <li>🍄 Shiitake &amp; king oyster mushroom</li>
+                            <li>🥦 Brocoli &amp; spinach</li>
+                            <li>🫚 Fresh ginger</li>
+                            <li>🌾 Toasted sesame</li>
+                            <li>🌿 Light umami sauce</li>
+                        </ul>
+                        <div class="menu-card__tags">
+                            <span class="menu-tag">Vegan</span>
+                            <span class="menu-tag">Anti-Inflamasi</span>
+                            <span class="menu-tag">Gut Health</span>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
@@ -698,7 +797,7 @@
             });
         }, { threshold: 0.1 });
 
-        document.querySelectorAll('.vp-card, .area-card, .pricing-card, .tracker-item').forEach(el => {
+        document.querySelectorAll('.vp-card, .area-card, .pricing-card, .tracker-item, .menu-card').forEach(el => {
             observer.observe(el);
         });
     </script>
